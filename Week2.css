@@ -1,111 +1,91 @@
-
-
-
-* {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #e0eafc, #cfdef3);
   margin: 0;
-  padding: 40px 20px;
-  display: flex;
-  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: #fff;
+  padding: 30px;
 }
 
 .container {
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 600px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: auto;
+  background: #ffffff15;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
 }
 
-form {
+.controls {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-input {
-  padding: 12px;
+textarea, input, select, button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
 }
 
 button {
-  padding: 12px;
-  font-size: 1rem;
-  background-color: #2196f3;
-  color: white;
-  border: none;
-  border-radius: 8px;
+  background-color: #ff9f43;
+  color: #fff;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #1976d2;
+  background-color: #e58e26;
 }
 
-.flashcards {
-  margin-top: 30px;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.flashcard {
-  background: #fafafa;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  height: 150px;
-  perspective: 1000px;
-  cursor: pointer;
-}
-
-.flashcard-inner {
+.postcard-preview {
+  margin-top: 20px;
+  height: 300px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
   position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.flashcard.flipped .flashcard-inner {
-  transform: rotateY(180deg);
-}
-
-.flashcard-front,
-.flashcard-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#previewText {
+  font-size: 1.5rem;
+  padding: 10px;
+  text-align: center;
   font-weight: bold;
-  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px black;
 }
 
-.flashcard-front {
-  background: #bbdefb;
-  color: #0d47a1;
+/* Animations */
+.fade-in { animation: fade 2s ease forwards; }
+.slide-in { animation: slide 2s ease forwards; }
+.bounce { animation: bounce 1s ease infinite; }
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.flashcard-back {
-  background: #c8e6c9;
-  color: #2e7d32;
-  transform: rotateY(180deg);
+@keyframes slide {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
