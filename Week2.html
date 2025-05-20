@@ -1,28 +1,41 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Flashcard App</title>
-  <link rel="stylesheet" href="FlashcardSystem.css" />
+  <title>📬 Virtual Postcard Creator</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div class="container">
-    <h1>Flashcard Creator</h1>
-    
-    <form id="cardForm">
-      <input type="text" id="topic" placeholder="Enter topic" required />
-      <input type="text" id="answer" placeholder="Enter answer" required />
-      <button type="submit">Add Flashcard</button>
-    </form>
+    <h1>📬 Create Your Virtual Postcard</h1>
 
-    <div id="flashcards" class="flashcards"></div>
+    <div class="controls">
+      <label>Background Image:</label>
+      <input type="file" id="imageUpload" accept="image/*" />
+
+      <label>Message:</label>
+      <textarea id="messageText" placeholder="Type your message here..."></textarea>
+
+      <label>Text Color:</label>
+      <input type="color" id="textColor" value="#ffffff" />
+
+      <label>Animation Style:</label>
+      <select id="animationStyle">
+        <option value="fade-in">Fade In</option>
+        <option value="slide-in">Slide In</option>
+        <option value="bounce">Bounce</option>
+      </select>
+
+      <button id="generateBtn">🎨 Preview Postcard</button>
+    </div>
+
+    <div class="postcard-preview" id="postcardPreview">
+      <p id="previewText">Your message will appear here</p>
+    </div>
   </div>
 
-  <script src="FlashcardSystem.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+
